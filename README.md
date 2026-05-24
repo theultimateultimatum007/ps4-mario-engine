@@ -23,11 +23,4 @@ Fork of Gatete Mario Engine: Anniversary Edition with PS4 Homebrew build support
 3. Build and test on **Windows** first (Run as administrator if the runner cannot write `AppData\Local`).
 4. Download [GayMaker-Studio](https://github.com/LiEnby/GayMaker-Studio/releases) (v1.2+).
 5. Point GayMaker at `PS4MarioEngine.project.gmx`, set title / Title ID / icons, then compile to `.pkg`.
-6. `orbis-wave-psslc.exe` obtained through our Discord.
-
-## Saves
-
-- Pick **File A / B / C** on the title screen before starting.
-- Progress **autosaves when you return to the world map after beating a level** (you do not need a Toad house).
-- Toad houses still offer **Save and Continue** / **Save and Return to Title**.
-- Use the **same GayMaker Title ID** on every PKG build or saves will not carry over.
+6. `orbis-wave-psslc.exe` obtained through our Discord. (will be open soon)
