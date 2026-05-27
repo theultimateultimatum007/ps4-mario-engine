@@ -8,6 +8,17 @@
 **      Initializes all of the global variables used throughout the game.
 */
 
+// Controller bindings (PS4 / gamepad -> virtual keys)
+// These are gamepad button constants (gp_*). Movement stays on dpad/stick.
+global.gp_bind_jump = gp_face1;     // Cross
+global.gp_bind_jump_alt = gp_face3; // Circle
+global.gp_bind_run = gp_face2;      // Square
+global.gp_bind_run_alt1 = gp_shoulderr;   // R1
+global.gp_bind_run_alt2 = gp_shoulderrb;  // R2
+global.gp_bind_reserve = gp_face4;  // Triangle
+global.gp_bind_pause = gp_start;    // Start
+global.gp_bind_back = gp_face3;     // Circle (menus)
+
 //Cheats
 global.cheats = false;
 

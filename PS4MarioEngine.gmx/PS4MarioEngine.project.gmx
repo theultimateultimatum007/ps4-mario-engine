@@ -1883,6 +1883,8 @@
         <script>scripts\set_keys.gml</script>
         <script>scripts\scr_is_ps4.gml</script>
         <script>scripts\scr_gamepad_init.gml</script>
+        <script>scripts\scr_gamepad_pick_button.gml</script>
+        <script>scripts\scr_gamepad_button_name.gml</script>
         <script>scripts\scr_gamepad_poll.gml</script>
         <script>scripts\scr_gamepad_reset.gml</script>
         <script>scripts\scr_titlemenu_apply_ps4.gml</script>
@@ -1903,6 +1905,7 @@
         <script>scripts\scr_save_read_info.gml</script>
         <script>scripts\scr_save_write_info.gml</script>
         <script>scripts\scr_save_refresh_title_slots.gml</script>
+        <script>scripts\scr_save_delete_slot.gml</script>
         <script>scripts\scr_savemenu_cancel.gml</script>
         <script>scripts\scr_savemenu_perform_save.gml</script>
         <script>scripts\save.gml</script>

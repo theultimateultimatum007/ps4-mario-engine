@@ -26,7 +26,7 @@ menu[2,7] = "";
 // Options: hide Set Window Size, V-Sync, and FPS
 if (argument[0] == 0) {
     menu[2,0] = 4;
-    menu[2,1] = "Keyboard Configuration";
+    menu[2,1] = "Controller Configuration";
     if (global.reservedrop)
         menu[2,2] = "Reserve Auto-Drop: On";
     else
@@ -36,7 +36,7 @@ if (argument[0] == 0) {
 }
 else {
     menu[2,0] = 3;
-    menu[2,1] = "Keyboard Configuration";
+    menu[2,1] = "Controller Configuration";
     menu[2,2] = "View Credits";
     menu[2,3] = "Back";
 }

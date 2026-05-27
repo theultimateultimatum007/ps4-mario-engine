@@ -9,7 +9,7 @@
 if (!global.gamepad)
     return false;
 
-if (!gamepad_button_check_pressed(0, gp_face3))
+if (!gamepad_button_check_pressed(0, global.gp_bind_back))
     return false;
 
 if (!instance_exists(obj_savemenu))

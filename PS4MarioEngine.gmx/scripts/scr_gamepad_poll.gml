@@ -24,6 +24,15 @@ if (!global.gamepad)
 
 var gp = gamepad_input;
 
+// Helpers for bindings (stored as gp_* constants)
+var b_jump = global.gp_bind_jump;
+var b_jump_alt = global.gp_bind_jump_alt;
+var b_run = global.gp_bind_run;
+var b_run1 = global.gp_bind_run_alt1;
+var b_run2 = global.gp_bind_run_alt2;
+var b_reserve = global.gp_bind_reserve;
+var b_pause = global.gp_bind_pause;
+
 // Left stick — movement
 if (leftstick[0] == 0 && gamepad_axis_value(gp, gp_axislv) <= -0.5) {
     leftstick[0] = 1;
@@ -83,36 +92,36 @@ else if (gamepad_button_check_released(gp, gp_padr))
     keyboard_key_release(global.rightkey);
 
 // Face buttons — DualShock layout (see GayMaker-Studio README)
-// Cross: one-shot press so menus get keyboard_check_pressed(shift)
-if (gamepad_button_check_pressed(gp, gp_face1))
+// Jump: one-shot press so menus get keyboard_check_pressed(shift)
+if (gamepad_button_check_pressed(gp, b_jump))
     keyboard_key_press(global.shiftkey);
-else if (gamepad_button_check_released(gp, gp_face1))
+else if (gamepad_button_check_released(gp, b_jump))
     keyboard_key_release(global.shiftkey);
 
 // Circle = jump in-game only (Back in title menu uses scr_titlemenu_cancel)
 if (room != rm_titlemenu) {
-    if (gamepad_button_check_pressed(gp, gp_face3))
+    if (gamepad_button_check_pressed(gp, b_jump_alt))
         keyboard_key_press(global.shiftkey);
-    else if (gamepad_button_check_released(gp, gp_face3))
+    else if (gamepad_button_check_released(gp, b_jump_alt))
         keyboard_key_release(global.shiftkey);
 }
 
 // Square / shoulders = run (held)
-if (gamepad_button_check(gp, gp_face2)
- || gamepad_button_check(gp, gp_shoulderr)
- || gamepad_button_check(gp, gp_shoulderrb))
+if (gamepad_button_check(gp, b_run)
+ || gamepad_button_check(gp, b_run1)
+ || gamepad_button_check(gp, b_run2))
     keyboard_key_press(global.controlkey);
 else
     keyboard_key_release(global.controlkey);
 
 // Triangle = reserve (held)
-if (gamepad_button_check(gp, gp_face4))
+if (gamepad_button_check(gp, b_reserve))
     keyboard_key_press(global.spacekey);
 else
     keyboard_key_release(global.spacekey);
 
 // Start = pause (held)
-if (gamepad_button_check(gp, gp_start))
+if (gamepad_button_check(gp, b_pause))
     keyboard_key_press(global.enterkey);
 else
     keyboard_key_release(global.enterkey);

@@ -741,6 +741,18 @@ file_text_writeln(file);
 
 //Save right key
 file_text_write_string(file,string(real(global.rightkey)));
+file_text_writeln(file);
+
+//Save controller bindings (gp_*)
+file_text_write_string(file,string(real(global.gp_bind_jump)));
+file_text_writeln(file);
+file_text_write_string(file,string(real(global.gp_bind_run)));
+file_text_writeln(file);
+file_text_write_string(file,string(real(global.gp_bind_reserve)));
+file_text_writeln(file);
+file_text_write_string(file,string(real(global.gp_bind_pause)));
+file_text_writeln(file);
+file_text_write_string(file,string(real(global.gp_bind_back)));
 
 //Close the file
 file_text_close(file);
@@ -820,6 +832,27 @@ if (scr_save_exists("settings.dat")) {
     
     //Set key assigned to 'Right'
     global.rightkey = real(file_text_read_string(file));
+    file_text_readln(file);
+
+    //Controller bindings (optional; older settings.dat won't have them)
+    if (!file_text_eof(file)) {
+        global.gp_bind_jump = real(file_text_read_string(file)); file_text_readln(file);
+    }
+    if (!file_text_eof(file)) {
+        global.gp_bind_run = real(file_text_read_string(file)); file_text_readln(file);
+    }
+    if (!file_text_eof(file)) {
+        global.gp_bind_reserve = real(file_text_read_string(file)); file_text_readln(file);
+    }
+    if (!file_text_eof(file)) {
+        global.gp_bind_pause = real(file_text_read_string(file)); file_text_readln(file);
+    }
+    if (!file_text_eof(file)) {
+        global.gp_bind_back = real(file_text_read_string(file)); file_text_readln(file);
+    }
+
+    //Keep alt jump in sync with jump by default
+    global.gp_bind_jump_alt = global.gp_bind_jump;
 
     //Close the file
     file_text_close(file);
